@@ -1,10 +1,10 @@
 .row-align-items-center.mc-row
   .col-align-self-center.mc-col
     h1 {{app.greeting}}
+    h3 52.66.133.220
     h2
       span Server Status: 
       span(ng-class="{red: app.serverState === 'stopped', green: app.serverState === 'running', yellow: app.serverState === 'pending', orange: app.serverState === 'stopping'}") {{app.serverState}}
-    h3 52.66.133.220
     .buttons(ng-if="app.serverState !== ''")
       .mc-button(ng-class="{working: app.serverState === 'pending' || app.serverState === 'stopping'}")
         div(ng-switch="app.serverState" ng-click="app.toggleServer()")
