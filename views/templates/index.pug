@@ -1,19 +1,13 @@
-.row-align-items-center
-  .col-align-self-center
-    h2 {{app.greeting}}
-    p Server Status: {{app.serverState}}
+.row-align-items-center.mc-row
+  .col-align-self-center.mc-col
+    h1 {{app.greeting}}
+    h2
+      span Server Status: 
+      span(ng-class="{red: app.serverState === 'stopped', green: app.serverState === 'running', yellow: app.serverState === 'pending', orange: app.serverState === 'stopping'}") {{app.serverState}}
+    h3 52.66.133.220
     .buttons(ng-if="app.serverState !== ''")
-      button.btn.btn-success.btn-lg(
-        type="button" 
-        ng-click="app.startServer()" 
-        ng-disabled="app.serverRunning"
-        ng-class="{disabled: app.serverState == 'running'}"
-      ) Start Server
-      br
-      br
-      button.btn.btn-danger.btn-lg(
-        type="button"
-        ng-click="app.stopServer()" 
-        ng-disabled="!app.serverRunning"
-        ng-class="{disabled: app.serverStatus == 'stopped'}"
-      ) Stop Server
+      .mc-button(ng-class="{working: app.serverState === 'pending' || app.serverState === 'stopping'}")
+        div(ng-switch="app.serverState" ng-click="app.toggleServer()")
+          span(ng-switch-when="stopped") START SERVER
+          span(ng-switch-when="running") STOP SERVER
+          span(ng-switch-default) ...

@@ -98,7 +98,10 @@ gulp.task('build-css', function () {
       filter: mainBowerFilesFilter
     }).concat(cssFiles))
     .pipe(filter('**/*.css'))
-    .pipe(order(['public/stylesheets/css/style.css']))
+    .pipe(order([
+      'public/stylesheets/css/style.css',
+      'bower_components/bootstrap/dist/css/bootstrap.min.css'
+    ]))
     .pipe(concatCss('scrolls.min.css'))
     .pipe(cleanCss())
     .pipe(gulp.dest('public/stylesheets/dist'))

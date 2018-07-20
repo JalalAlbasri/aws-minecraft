@@ -12,26 +12,30 @@ router.get('/describe', (req, res, next) => {
   })
 })
 
-router.get('/start', (res, req, next) => {
+router.get('/start', (req, res, next) => {
   awsHandler.start().then(data => {
+    // console.log(`/start, router success ${typeof data}`)
     res.json(data)
   }).catch(err => {
+    // console.log(`/start, router error, ${JSON.stringify(err)}`)
     next(err)
   })
 })
 
-router.post('/start', (res, req, next) => {
-  awsHandler.start(req.body.duration).then(data => {
-    res.json(data)
-  }).catch(err => {
-    next(err)
-  })
-})
+// router.post('/start', (res, req, next) => {
+//   awsHandler.start(req.body.duration).then(data => {
+//     res.json(data)
+//   }).catch(err => {
+//     next(err)
+//   })
+// })
 
-router.get('/stop', (res, req, next) => {
+router.get('/stop', (req, res, next) => {
   awsHandler.stop().then(data => {
+    // console.log(`/stop, router success ${typeof data}`)
     res.json(data)
   }).catch(err => {
+    // console.log(`/stop, router error, ${JSON.stringify(err)}`)
     next(err)
   })
 })

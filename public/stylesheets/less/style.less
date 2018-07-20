@@ -1,1 +1,74 @@
 // @import '../less/.less';
+@font-face {
+  font-family: SilkscreenNormal;
+  src: url('/fonts/slkscr.ttf'), url('/fonts/slkscr.eot');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: SilkscreenNormal, 'Courier New', Courier, monospace;
+  background-image: url('/images/cobblestone.png');
+  background-repeat: repeat;
+  background-size: 75px;
+  color: white;
+  text-shadow: 3px 3px #000000;
+}
+
+.mc-row {
+  padding-top: 15%;
+}
+
+.mc-col {
+  text-align: center;
+  padding: 32px;
+  background-image: url('/images/wood.png');
+  background-repeat: repeat;
+  background-size: 75px;
+  -webkit-box-shadow: 3px 4px 7px 2px rgba(0,0,0,0.81);
+  -moz-box-shadow: 3px 4px 7px 2px rgba(0,0,0,0.81);
+  box-shadow: 3px 4px 7px 2px rgba(0,0,0,0.81);
+}
+
+.buttons {
+  padding-top: 24px;
+}
+
+.mc-button {
+  height: 40px;
+  width: 405px;
+  min-width: 405px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  background: url('/images/btn1.png') no-repeat;
+  font-family: SilkscreenNormal, 'Courier New', Courier, monospace;
+  line-height: 26px;
+  padding-top: 6px;
+  margin: 0 auto;
+}
+
+.mc-button:hover {
+  background: url('/images/btn2.png') no-repeat;
+}
+
+.mc-button.working {
+  background: url('/images/btn2.png') no-repeat;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: rgb(0, 255, 0);
+}
+
+.yellow {
+  color: yellow;
+}
+
+.orange {
+  color: orange;
+}
